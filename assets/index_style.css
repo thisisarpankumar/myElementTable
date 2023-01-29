@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+a {
+    text-decoration: none;
+}
+
+.periodic-table {
+    font-family: "Poppins", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(18, 4em);
+    grid-template-rows: repeat(9, 4em);
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    margin: 0 50%;
+    max-width: 1200px;
+    justify-content: center;
+}
+
+.periodic-element {
+    padding: 1px;
+    position: relative;
+    z-index: 1;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.periodic-element .periodic-element-inner {
+    background-color: #202e38;
+    padding: 10px 15px;
+    width: calc(100% - 30px);
+    height: calc(100% - 20px);
+    transition: inherit;
+}
+
+.title {
+    margin-left: -16px;
+    margin-right: -16px;
+    text-align: center;
+}
+
+.periodic-element .title {
+    font: 1.4em "Poppins", sans-serief;
+    transition: 0.8s ease 600ms;
+}
+
+.periodic-element .desc {
+    font: 0.6em "Poppins", sans-serief;
+    margin-top: -0.2em;
+}
+
+.desc {
+    padding: 0;
+    position: relative;
+    right: 15px;
+    text-align: center;
+    width: 191%;
+}
+
+.periodic-element:hover {
+    transform: scale(2);
+    z-index: 10;
+}
+
+.periodic-element:hover .periodic-element-inner {
+    background: transparent;
+}
+
+.periodic-element:hover .title, .periodic-element:hover .desc {
+    -webkit-text-fill-color: #222;
+    text-align: center;
+}
+
+.periodic-element:hover .title {
+    width: 200%;
+    right: -100px;
+}
+
+.periodic-element:hover .desc {
+    width: 200%;
+    right: 16px;
+}
+
+.periodic-element:hover::after {
+    top: 105%;
+    opacity: 1;
+}
+
+.periodic-element {
+    cursor: pointer;
+}
+
+.one {
+    background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
+
+}
+
+.one .title, .one .desc {
+    background: -webkit-linear-gradient(#f3f9a6, #cbc643);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.two {
+    background: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);
+}
+
+.two .title, .two .desc {
+    background: linear-gradient(#37cfdc, #5a88e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.three {
+    background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%);
+}
+
+.three .title, .three .desc {
+    background: linear-gradient(#58ac30, #a7df62);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.four {
+    background: linear-gradient(to bottom right, #fa7f72 0%, #ffc171 100%);
+}
+
+.four .title, .four .desc {
+    background: linear-gradient(#fa7f72, #ffc171);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.five {
+    background: linear-gradient(to bottom right, #d10dc7 0%, #f56dc1 100%);
+}
+
+.five .title, .five .desc {
+    background: linear-gradient(#d10dc7, #f56dc1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.empty-space-1 {
+    grid-row: 1;
+    grid-column: 2/span 16;
+
+}
+
+.empty-space-2 {
+    grid-row: 2;
+    grid-column: 3/span 10;
+    ;
+
+}
+
+.empty-space-3 {
+    grid-row: 3;
+    grid-column: 3/span 10;
+
+}
+
+.empty-space-4 {
+    grid-row: 8;
+    grid-column: 1/span 18;
+}
+
+.empty-space-5 {
+    grid-row: 9;
+    grid-column: 1/span 2;
+
+}
+
+.empty-space-6 {
+    grid-row: 9;
+    grid-column: 17/span 2;
+
+}
+
+.empty-space-7 {
+    grid-row: 10;
+    grid-column: 1/span 2;
+
+}
+
+
+
+
+@media only screen and (orientation: landscape) {
+    #fullpage {
+        visibility: visible;
+    }
+
+    #myNav {
+        visibility: visible;
+    }
+
+    #turn {
+        display: none;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    #fullpage {
+        display: none;
+    }
+
+    #myNav, .btn1 {
+        display: none;
+    }
+
+    #turn {
+        display: block;
+        text-align: center;
+        font-size: 30px;
+        color: #fff;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        top: 40%;
+    }
+
+    .fp-tooltip, .fp-nav, span {
+        display: none !important;
+    }
+}
